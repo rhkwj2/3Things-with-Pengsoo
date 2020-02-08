@@ -8,21 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate{
 
-    
+
     @IBOutlet weak var pageController: UIPageControl!
-   
     @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet var scrollViewCollection: [UIScrollView]!
+    @IBOutlet var imageViewCollection: [UIImageView]!
     
+    var curPage = 0
     
-    @IBOutlet weak var scrollViewCollection: UIScrollView!
-    
-    
-    
-    @IBOutlet weak var imageViewController: UIImageView!
-    
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+           curPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+           pageController.currentPage = curPage
+           if curPage + 1 < 7{
+               scrollViewCollection[curPage + 1].zoomScale = 1.0
+           }
+           if curPage - 1 >= 0 {
+            scrollViewCollection[curPage - 1].zoomScale = 1.0
+           }
+       }
+       
     
     override func viewDidLoad() {
         super.viewDidLoad()

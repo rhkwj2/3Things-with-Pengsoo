@@ -143,10 +143,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="imageViewController" destination="Agt-xD-jB0" id="jxc-yf-IpW"/>
                         <outlet property="mainScrollView" destination="8wt-JU-oDG" id="HO0-ON-Ysr"/>
                         <outlet property="pageController" destination="owE-PV-u8H" id="jeN-0l-W5n"/>
-                        <outlet property="scrollViewCollection" destination="SrZ-Ie-Iv7" id="cos-lm-G2C"/>
+                        <outletCollection property="scrollViewCollection" destination="l9C-cq-GhL" collectionClass="NSMutableArray" id="1lT-2X-CrD"/>
+                        <outletCollection property="imageViewCollection" destination="Agt-xD-jB0" collectionClass="NSMutableArray" id="8lr-OA-5Lx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
